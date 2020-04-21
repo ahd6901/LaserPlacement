@@ -14,9 +14,20 @@ import java.util.Optional;
  * implement.
  *
  * @author RIT CS
- * @author YOUR NAME HERE
+ * @author Amy DO
+ * @author Shubhang Mehrotra
  */
 public class Backtracker {
+
+    //Each tile that isn't a pillar can be populated with two successors - an empty tile, or a laser.
+    // This is done in getSuccessors. You should not check the validity of the successors here.
+    //If a laser was last placed, you must check that no other laser is in sight of it. This is done in isValid.
+    //When the last tile in the safe is populated, you must check that all numbered pillars have the exact number of
+    // lasers attached to them. There should also be no empty tiles remaining. This can be done in isValid or isGoal.
+
+    //better pruning algorithms. They could start by focusing on the numbered pillars, and then working through the
+    // empty tiles that remain and try to place lasers on them. If you implement this or something else that noticeably
+    // speeds up your solver you will receive extra credit for the project.
 
     private boolean debug;
 

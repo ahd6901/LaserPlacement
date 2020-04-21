@@ -9,7 +9,8 @@ import java.util.List;
  * you wish, but it should still follow the MVC architecture.
  *
  * @author RIT CS
- * @author YOUR NAME HERE
+ * @author Amy DO
+ * @author Shubhang Mehrotra
  */
 public class LasersModel {
     /** the observers who are registered with this model */

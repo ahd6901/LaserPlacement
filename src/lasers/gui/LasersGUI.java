@@ -18,6 +18,8 @@ import lasers.model.*;
  * and receives updates from it.
  *
  * @author RIT CS
+ * @author Amy Do
+ * @author Shubhang Mehrotra
  */
 public class LasersGUI extends Application implements Observer<LasersModel, ModelData> {
     /** The UI's connection to the lasers.lasers.model */
@@ -25,6 +27,49 @@ public class LasersGUI extends Application implements Observer<LasersModel, Mode
 
     /** this can be removed - it is used to demonstrates the button toggle */
     private static boolean status = true;
+
+    //The JavaFX GUI lives in the lasers.gui package. The main class is LasersGUI. This class acts as both view and
+    // controller. Just like the plain text UI, it must implement the provided Observer interface and handle displaying
+    // changes to the user via the update method. Additionally, it will also act like a controller and provide handlers
+    // for the UI components so that the model can be informed of them.
+
+    // Pay special attention to how the plain text UI is structured and launched in the main method.
+    // There is a main class for the view, LasersPTUI, and a separate controller class, ControllerPTUI, in the lasers.ptui package.
+
+    //Functionality:
+    //
+    //  Message Outputs: current status of the safe, updated as operations are performed, could go in the particular methods, or have a separate method to handle the message label.
+    //      1. The name of the safe file when initially loaded or restarted. - Read from file, and display txt
+    //      2. The result of attempting to add or remove a laser from the safe. - goes in add/remove
+    //      3. The status of the safe when checked for correctness. - goes in verify
+    //      4. The result of requesting a hint for the next laser to place. - hint
+    //      5. The result of attempting to fully solve the laser placements. - result when pressed solve, from verify??
+    //
+    //  Graphical Display: From safe file in command line
+    //
+    //  Controls: All Buttons
+    //           Add/Remove: A mouse click on a tile - if the cell is empty, or a laser beam, a new laser is added.
+    //            If the cell already contains a laser, it should be removed. If a cell contains a pillar,
+    //            it is an error. In all cases, a message should be displayed to the message
+    //            area that includes the coordinate of the tile that was selected.
+    //
+    //           Check: button for verify method : If the check fails, the first tile that is invalid should be visibly
+    //             marked in a way that stands out to the user and its coordinates should be indicated in the message area.
+    //
+    //           Hint: attempts to add a new laser to the safe,  the message area should be updated to indicate success
+    //             or, if the safe is not valid, or the current laser placement can't yield a solution.
+    //
+    //           Solve: button to solve the puzzle : Solving should ignore the current placement of lasers and start
+    //             from the initial configuration. Then display message.
+    //
+    //           Restart: Reset to initial, then display message.
+    //
+    //           Load: lets a user load another safe file : Selecting this should bring up a
+    //           file chooser window that lets the user browse to a safe file
+
+
+
+
 
     @Override
     public void init() throws Exception {

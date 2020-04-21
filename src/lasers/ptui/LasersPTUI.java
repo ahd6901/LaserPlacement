@@ -49,6 +49,22 @@ public class LasersPTUI implements Observer<LasersModel, ModelData> {
         // TODO
     }
 }
+
+//Your plain text UI from part one will need to be re-designed so that it follows the Model-View-Controller
+// pattern discussed in lecture and lab. All the state and behaviors for your safe need to go into the
+// lasers.model package. The main class should be called LasersModel, and you are encouraged to create other
+// supporting classes in here. Because you will find passing data to the UI's useful, like status messages,
+// an empty ModelData class is provided to you that you can customize however you want.
+//
+//The plain text UI's view class, LasersPTUI.java in the lasers.ptui package must implement the provided
+// Observer interface. It is responsible for creating the model and implementing the update method so that when
+// the model changes and the view is notified, the user sees the change.
+//
+//The plain text UI's controller class, ControllerPTUI, is responsible for reading input and performing the
+// appropriate operation on the model.
+
+
+
 //package lasers.ptui;
 //
 //        import lasers.model.Safe;
