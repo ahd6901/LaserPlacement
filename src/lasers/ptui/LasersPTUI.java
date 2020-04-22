@@ -16,7 +16,8 @@ import lasers.model.Observer;
  * You should create the model here, and then implement the update method.
  *
  * @author Sean Strout @ RIT CS
- * @author YOUR NAME HERE
+ * @author Amy Do
+ * @author Shubhang Mehrotra
  */
 public class LasersPTUI implements Observer<LasersModel, ModelData> {
     /** The UI's connection to the model */
@@ -39,10 +40,10 @@ public class LasersPTUI implements Observer<LasersModel, ModelData> {
 
     /**
      * Accessor for the model the PTUI create.
-     *
      * @return the model
      */
-    public LasersModel getModel() { return this.model; }
+    public LasersModel getModel() {
+        return this.model; }
 
     @Override
     public void update(LasersModel model, ModelData data) {

@@ -9,4 +9,5 @@ package lasers.model;
  * @author Shubhang Mehrotra
  */
 public class ModelData {
+
 }

@@ -12,6 +12,7 @@ package lasers.model;
  * @author RIT CS
  */
 public interface Observer<Subject, ClientData> {
+
     /**
      * The observed subject calls this method on each observer that has
      * previously registered with it. This version of the design pattern
