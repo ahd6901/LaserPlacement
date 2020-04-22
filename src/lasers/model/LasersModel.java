@@ -27,6 +27,7 @@ public class LasersModel {
      * @param observer the new observer
      */
     public void addObserver(Observer<LasersModel, ModelData > observer) {
+
         this.observers.add(observer);
     }
 
@@ -39,5 +40,13 @@ public class LasersModel {
         for (Observer<LasersModel, ModelData> observer: observers) {
             observer.update(this, data);
         }
+    }
+
+    /**
+     * remove the observer from the list.
+     * @param observer to be removed.
+     */
+    public void removeObserver(Observer<LasersModel, ModelData > observer){
+        this.observers.remove(observer);
     }
 }
