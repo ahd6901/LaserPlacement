@@ -103,7 +103,9 @@ public class ControllerPTUI  {
      */
     public void run(String inputFile) {
         // TODO: proccess inpuFile if it's specified
-        if(!inputFile.equals(null)){
+        if(!inputFile.equals(null)){   //if input file exist
+
+        }else{
 
         }
 

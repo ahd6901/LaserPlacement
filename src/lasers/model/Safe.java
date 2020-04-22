@@ -30,13 +30,40 @@ public class Safe {
         this.safe = new String[row][column];
         this.laserBeamCount = new Integer[row][column];
 
-        for (int i = 0; i < this.column; i++) {
+        for (int i = 0; i < this.column; i++) {    //initiallize number of beam at each tile
             for (int j = 0; j < this.row; j++) {
-                this.laserBeamCount[i][j] = 0;
-            }
-        }
+            this.laserBeamCount[i][j] = 0;
+           }
+      }
     }
 
+    public int getRow() {
+        return row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    /**
+     * method to check the validity of the given pillar
+     * @param tile : a tile in a safe
+     * @return : true : if tile is valid
+     * false: otherwise
+     */
+    private boolean isPillar(String tile) {
+        switch (tile) {
+            case "X":
+            case "0":
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+                return true;
+            default:
+                return false;
+        }
+    }
 
     /**
      * add a Laser at the required coordinates and make the laser beam
@@ -100,25 +127,7 @@ public class Safe {
     }
 
 
-    /**
-     * method to check the validity of the given pillar
-     * @param tile : a tile in a safe
-     * @return : true : if tile is valid
-     * false: otherwise
-     */
-    private boolean isPillar(String tile) {
-        switch (tile) {
-            case "X":
-            case "0":
-            case "1":
-            case "2":
-            case "3":
-            case "4":
-                return true;
-            default:
-                return false;
-        }
-    }
+
 
     /**
      * remove a laser at given coordinates

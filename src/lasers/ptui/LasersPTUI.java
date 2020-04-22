@@ -28,7 +28,7 @@ public class LasersPTUI implements Observer<LasersModel, ModelData> {
      * @param filename the safe file name
      * @throws FileNotFoundException if file not found
      */
-    public LasersPTUI(String filename) throws FileNotFoundException {
+    public LasersPTUI(String filename) throws IOException {
         try {
             this.model = new LasersModel(filename);
         } catch (FileNotFoundException fnfe) {
@@ -45,9 +45,13 @@ public class LasersPTUI implements Observer<LasersModel, ModelData> {
     public LasersModel getModel() {
         return this.model; }
 
+
     @Override
     public void update(LasersModel model, ModelData data) {
-        // TODO
+        // TODO:update the laser information.
+
+
+
     }
 }
 

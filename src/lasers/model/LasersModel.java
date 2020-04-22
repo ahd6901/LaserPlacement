@@ -23,9 +23,10 @@ public class LasersModel {
     private List<Observer<LasersModel, ModelData>> observers;
     private Safe s;
 
-    public LasersModel(String filename) throws FileNotFoundException {
+    public LasersModel(String filename) throws IOException {
         this.observers = new LinkedList<>();
         // TODO: create the safe from safeFile
+        readOneArgument(filename);
 
     }
 
