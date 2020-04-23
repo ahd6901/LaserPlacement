@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author Shubhang Mehrotra
  */
 public class ModelData {
+
 //    private Integer[][] laserBeamCount;     // keeps count of the numbers of laser-beams on a tile
 //
 //    int row, column;  //cordinates of the laser

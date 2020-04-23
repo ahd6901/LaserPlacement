@@ -17,23 +17,27 @@ import java.io.IOException;
  * @author Amy Do
  * @author Shubhang Mehrotra
  */
-public class ControllerPTUI  {
-    /** The UI's connection to the lasers.lasers.model */
+public class ControllerPTUI {
+    /**
+     * The UI's connection to the lasers.lasers.model
+     */
     private LasersModel model;
     private Safe s;
 
 
     /**
      * Construct the PTUI.  Create the model and initialize the view.
+     *
      * @param model The laser model
      */
     public ControllerPTUI(LasersModel model) {
         this.model = model;
-        this.s= this.model.getSafe();          //get the current safe.
+        this.s = this.model.getSafe();          //get the current safe.
     }
 
-     /**
+    /**
      * reads input-file line by line until none is left.
+     *
      * @param inputFile to read input from
      * @throws IOException when file cannot be found.
      */
@@ -52,8 +56,10 @@ public class ControllerPTUI  {
             System.out.println("IOException");
         }
     }
+
     /**
      * Processes each user command, and produce the action accordingly.
+     *
      * @param command to follow.
      */
     public void processUserCommand(String command) {
@@ -65,7 +71,7 @@ public class ControllerPTUI  {
                 int column = Integer.parseInt(list[2]);
                 if (list[1].isEmpty() || list[2].isEmpty() || row < 0 || column < 0) {
                     System.out.println("Incorrect coordinates: " + command);
-                }else{
+                } else {
                     s.addLaser(row, column);
                 }
             } else {
@@ -86,11 +92,11 @@ public class ControllerPTUI  {
                 int column = Integer.parseInt(list[2]);
                 if (list[1].isEmpty() || list[2].isEmpty() || row < 0 || column < 0) {
                     System.out.println("Incorrect coordinates: (" + command + ")");
-                }else{
+                } else {
                     s.removeLaser(row, column);
                 }
             } else {
-                System.out.println("Incorrect coordinates: (" + command+ ")");
+                System.out.println("Incorrect coordinates: (" + command + ")");
             }
         } else {
             System.out.println("Unrecognized command: " + command);
@@ -98,16 +104,23 @@ public class ControllerPTUI  {
     }
 
     /**
-     * Run the main loop.  This is the entry point for the controller
+     * Run the main loop.This is the entry point for the controller
+     *
      * @param inputFile The name of the input command file, if specified
      */
     public void run(String inputFile) {
-        // TODO: proccess inpuFile if it's specified
-        if(!inputFile.equals(null)){   //if input file exist
+            try {
+                BufferedReader buff = new BufferedReader(new FileReader(inputFile));
+                String line;
 
-        }else{
-
-        }
-
+                //read each line, until none is left.
+                while ((line = buff.readLine()) != null) {
+                    processUserCommand(line);
+                }
+            } catch (FileNotFoundException fnf) {
+                System.out.println("File cannot be found!");
+            } catch (IOException e) {
+                System.out.println("IOException");
+            }
     }
 }
