@@ -5,21 +5,29 @@ import java.util.ArrayList;
 /**
  * Use this class to customize the data you wish to send from the model
  * to the view when the model changes state.
- * //TODO:
+ * //basically a Tile representation
  *
  * @author RIT CS
  * @author Amy Do
  * @author Shubhang Mehrotra
  */
 public class ModelData {
-    private int row,column;     //cordinates of the changed tile
+    private int row,column;
     private String content;
+    private int beamCount;   //number of beam in this tile
+
 
 
     public ModelData(int row, int column, String content ) {
         this.row = row;
         this.column = column;
         this.content= content;
+        beamCount=0;
+    }
+
+
+    public void addBeam(int num){
+        beamCount+=num;
     }
 
     public int getRow() {
@@ -45,6 +53,20 @@ public class ModelData {
     public void setContent(String content) {
         this.content = content;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //    private Integer[][] laserBeamCount;     // keeps count of the numbers of laser-beams on a tile
 //

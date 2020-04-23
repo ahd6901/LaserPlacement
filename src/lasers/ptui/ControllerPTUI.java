@@ -23,7 +23,6 @@ public class ControllerPTUI {
      * The UI's connection to the lasers.lasers.model
      */
     private LasersModel model;
-    private Safe s;
 
 
     /**
@@ -33,30 +32,9 @@ public class ControllerPTUI {
      */
     public ControllerPTUI(LasersModel model) {
         this.model = model;
-        this.s = this.model.getSafe();          //get the current safe.
+
     }
 
-    /**
-     * reads input-file line by line until none is left.
-     *
-     * @param inputFile to read input from
-     * @throws IOException when file cannot be found.
-     */
-    public void readInputFile(String inputFile) throws IOException {
-        try {
-            BufferedReader buff = new BufferedReader(new FileReader(inputFile));
-            String line;
-
-            //read each line, until none is left.
-            while ((line = buff.readLine()) != null) {
-                processUserCommand(line);
-            }
-        } catch (FileNotFoundException fnf) {
-            System.out.println("File cannot be found!");
-        } catch (IOException e) {
-            System.out.println("IOException");
-        }
-    }
 
     /**
      * Processes each user command, and produce the action accordingly.
@@ -111,7 +89,8 @@ public class ControllerPTUI {
      * @param inputFile The name of the input command file, if specified
      */
     public void run(String inputFile) {
-        //TODO:
+        //if the inputFile is specified,
+        if (inputFile != null) {
             try {
                 BufferedReader buff = new BufferedReader(new FileReader(inputFile));
                 String line;
@@ -126,5 +105,13 @@ public class ControllerPTUI {
                 System.out.println("IOException");
             }
 
+        } else {
+            System.out.print(">");
+            Scanner in = new Scanner(System.in);
+            while (in.hasNextLine()) {
+                processUserCommand(in.nextLine());  //process input
+                System.out.print(">");              //prompt input
+            }
+        }
     }
 }
