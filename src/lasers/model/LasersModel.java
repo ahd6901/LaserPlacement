@@ -25,7 +25,7 @@ public class LasersModel {
 
     public LasersModel(String filename) throws IOException {
         this.observers = new LinkedList<>();
-        // TODO: create the safe from safeFile
+        // TODO
         readOneArgument(filename);
 
     }
@@ -40,14 +40,13 @@ public class LasersModel {
     public void readOneArgument(String safeFile) throws IOException {
         //construct the safe
         readSafeFile(safeFile);
-
-        //get user input.
         System.out.print(">");
         Scanner in = new Scanner(System.in);
         while (in.hasNextLine()) {
             processUserCommand(in.nextLine());  //process input
             System.out.print(">");              //prompt input
         }
+
     }
 
     /**
@@ -165,7 +164,7 @@ public class LasersModel {
     }
 
     public Safe getSafe(){
-        return this.s;
+        return s;
     }
 
     /**
@@ -194,7 +193,6 @@ public class LasersModel {
      * @param observer to be removed.
      */
     public void removeObserver(Observer<LasersModel, ModelData> observer) {
-
         this.observers.remove(observer);
     }
 }

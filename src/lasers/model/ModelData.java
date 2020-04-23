@@ -12,8 +12,41 @@ import java.util.ArrayList;
  * @author Shubhang Mehrotra
  */
 public class ModelData {
+    private int row,column;     //cordinates of the changed tile
+    private String content;
 
-//    private Integer[][] laserBeamCount;     // keeps count of the numbers of laser-beams on a tile
+
+    public ModelData(int row, int column, String content ) {
+        this.row = row;
+        this.column = column;
+        this.content= content;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    //    private Integer[][] laserBeamCount;     // keeps count of the numbers of laser-beams on a tile
 //
 //    int row, column;  //cordinates of the laser
 //

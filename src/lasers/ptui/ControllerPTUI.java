@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * This class represents the controller portion of the plain text UI.
@@ -73,6 +74,7 @@ public class ControllerPTUI {
                     System.out.println("Incorrect coordinates: " + command);
                 } else {
                     s.addLaser(row, column);
+
                 }
             } else {
                 System.out.println("Incorrect coordinates: " + command);
@@ -109,6 +111,7 @@ public class ControllerPTUI {
      * @param inputFile The name of the input command file, if specified
      */
     public void run(String inputFile) {
+        //TODO:
             try {
                 BufferedReader buff = new BufferedReader(new FileReader(inputFile));
                 String line;
@@ -122,5 +125,6 @@ public class ControllerPTUI {
             } catch (IOException e) {
                 System.out.println("IOException");
             }
+
     }
 }

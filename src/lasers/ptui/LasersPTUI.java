@@ -9,6 +9,7 @@ import java.util.Scanner;
 import lasers.model.LasersModel;
 import lasers.model.ModelData;
 import lasers.model.Observer;
+import lasers.model.Safe;
 
 /**
  * This class represents the view portion of the plain text UI.  It
@@ -48,9 +49,19 @@ public class LasersPTUI implements Observer<LasersModel, ModelData> {
 
     @Override
     public void update(LasersModel model, ModelData data) {
-        // TODO:update the laser information.
+        // TODO: update the view with the new changes from the model
+        //check for any changes happended in the matrix
+        checkForUpdate(model.getSafe());
 
 
+
+
+
+    }
+
+    public boolean checkForUpdate(Safe safe){
+
+        return true;
 
     }
 }
