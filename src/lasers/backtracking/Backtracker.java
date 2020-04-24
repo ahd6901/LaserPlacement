@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+//two options, is valid function():
+                            //decide a number, another laser
+// create a map of the grid
+
+
+
 /**
  * This class represents the classic recursive backtracking algorithm.
  * It has a solver that can take a valid configuration and return a
@@ -19,10 +25,10 @@ import java.util.Optional;
  */
 public class Backtracker {
 
-    //Each tile that isn't a pillar can be populated with two successors - an empty tile, or a laser.
+    // Each tile that isn't a pillar can be populated with two successors - an empty tile, or a laser.
     // This is done in getSuccessors. You should not check the validity of the successors here.
-    //If a laser was last placed, you must check that no other laser is in sight of it. This is done in isValid.
-    //When the last tile in the safe is populated, you must check that all numbered pillars have the exact number of
+    // If a laser was last placed, you must check that no other laser is in sight of it. This is done in isValid.
+    // When the last tile in the safe is populated, you must check that all numbered pillars have the exact number of
     // lasers attached to them. There should also be no empty tiles remaining. This can be done in isValid or isGoal.
 
     //better pruning algorithms. They could start by focusing on the numbered pillars, and then working through the

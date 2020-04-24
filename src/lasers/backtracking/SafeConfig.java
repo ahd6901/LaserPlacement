@@ -12,9 +12,15 @@ import java.util.Collection;
  * package and/or incorporate it into another class.
  *
  * @author RIT CS
- * @author YOUR NAME HERE
+ * @author Shubhang Mehrotra
+ * @author Amy Do
  */
 public class SafeConfig implements Configuration {
+
+    private static final String EMPTY_TILE = ".";
+    private static final String LASER = "L";
+    private static final String PILLAR = "X";
+
 
     public SafeConfig(String filename) {
         // TODO

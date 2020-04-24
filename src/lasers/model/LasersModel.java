@@ -8,6 +8,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+//grid, 2d array of modelData
+// observer observes the model, MVC model..addObserver(this), have a list
+
 /**
  * The model of the lasers safe.  You are free to change this class however
  * you wish, but it should still follow the MVC architecture.
