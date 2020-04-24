@@ -1,6 +1,7 @@
 package lasers.ptui;
 
 import lasers.model.LasersModel;
+import lasers.model.ModelData;
 import lasers.model.Safe;
 
 import java.io.BufferedReader;
@@ -22,7 +23,8 @@ public class ControllerPTUI {
     /**
      * The UI's connection to the lasers.lasers.model
      */
-    private LasersModel model;
+    private LasersModel model;   //matrix of ModelData
+
 
 
     /**
@@ -30,10 +32,12 @@ public class ControllerPTUI {
      *
      * @param model The laser model
      */
-    public ControllerPTUI(LasersModel model) {
+    public ControllerPTUI(LasersModel model) throws IOException {
         this.model = model;
 
+
     }
+
 
 
     /**
@@ -51,21 +55,20 @@ public class ControllerPTUI {
                 if (list[1].isEmpty() || list[2].isEmpty() || row < 0 || column < 0) {
                     System.out.println("Incorrect coordinates: " + command);
                 } else {
-                    s.addLaser(row, column);
-
+                    model.addLaser(row, column);
                 }
             } else {
                 System.out.println("Incorrect coordinates: " + command);
             }
 
         } else if (cmd == 'd') {
-            s.displaySafe();
+            model.displaySafe();
         } else if (cmd == 'h') {
-            s.help();
+            model.help();
         } else if (cmd == 'q') {
-            s.quit();
+            model.quit();
         } else if (cmd == 'v') {
-            s.verify();
+            model.verify();
         } else if (cmd == 'r') {
             if ((list.length == 3)) {
                 int row = Integer.parseInt(list[1]);
@@ -73,7 +76,7 @@ public class ControllerPTUI {
                 if (list[1].isEmpty() || list[2].isEmpty() || row < 0 || column < 0) {
                     System.out.println("Incorrect coordinates: (" + command + ")");
                 } else {
-                    s.removeLaser(row, column);
+                    model.removeLaser(row, column);
                 }
             } else {
                 System.out.println("Incorrect coordinates: (" + command + ")");

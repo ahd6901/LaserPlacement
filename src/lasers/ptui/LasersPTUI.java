@@ -51,7 +51,8 @@ public class LasersPTUI implements Observer<LasersModel, ModelData> {
     public void update(LasersModel model, ModelData data) {
         // TODO: update the view with the new changes from the model
         //check for any changes happended in the matrix
-        checkUpdate(model.getSafe());
+
+
     }
 
     /**

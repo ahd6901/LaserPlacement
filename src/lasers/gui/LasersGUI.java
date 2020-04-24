@@ -16,7 +16,6 @@ import lasers.model.*;
  * The main class that implements the JavaFX UI.   This class represents
  * the view/controller portion of the UI.  It is connected to the lasers.lasers.model
  * and receives updates from it.
- *
  * @author RIT CS
  * @author Amy Do
  * @author Shubhang Mehrotra

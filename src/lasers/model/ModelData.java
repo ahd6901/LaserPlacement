@@ -16,37 +16,35 @@ import java.util.ArrayList;
 public class ModelData {
     private int row,column;
     private String content;
-    private int beamCount;   //number of beam in this tile
+  //  private int beamCount;   //number of beam in this tile
 
 
 
-    public ModelData(int row, int column, String content ) {
-        this.row = row;
-        this.column = column;
+    public ModelData( String content){
         this.content= content;
-        beamCount=0;
     }
 
 
-    public void addBeam(int num){
-        beamCount+=num;
-    }
+//
+//    public void addBeam(int num){
+//        beamCount+=num;
+//    }
 
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
+//    public int getRow() {
+//        return row;
+//    }
+//
+//    public void setRow(int row) {
+//        this.row = row;
+//    }
+//
+//    public int getColumn() {
+//        return column;
+//    }
+//
+//    public void setColumn(int column) {
+//        this.column = column;
+//    }
 
     public String getContent() {
         return content;

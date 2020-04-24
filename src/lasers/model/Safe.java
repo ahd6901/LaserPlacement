@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * last modified : 04/17/2020
  */
-public class Safe {
+public class Safe  {
 
 
     private int row, column;                // co-ordinates of a floor tile
@@ -134,6 +134,7 @@ public class Safe {
             System.out.println(String.format("Error adding laser at: (%d, %d)", r, c));
         }
         displaySafe();
+
     }
 
 
