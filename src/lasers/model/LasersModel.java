@@ -87,37 +87,37 @@ public class LasersModel {
      * @param row         : the row to construct
      */
     public void processSafeLine(String commandLine, int row) {
-        //TODO: figure out how ad
+        //TODO: figure out how create ModelData, set its content => and place into the safe.
         String[] ls = commandLine.split(" ");
         int column = 0;
         for (String str : ls) {
             switch (str) {
                 case ".":
-                    model[row][column].setContent(".");
+                    model[row][column]= new ModelData(".");
                     column++;
                     break;
                 case "X":
-                    model[row][column].setContent("X");
+                    model[row][column]= new ModelData("X");
                     column++;
                     break;
                 case "0":
-                    model[row][column].setContent("0");
+                    model[row][column]= new ModelData("0");
                     column++;
                     break;
                 case "1":
-                    model[row][column].setContent("1");
+                    model[row][column]= new ModelData("1");
                     column++;
                     break;
                 case "2":
-                    model[row][column].setContent("2");
+                    model[row][column]= new ModelData("2");
                     column++;
                     break;
                 case "3":
-                    model[row][column].setContent("3");
+                    model[row][column]= new ModelData("3");
                     column++;
                     break;
                 case "4":
-                    model[row][column].setContent("4");
+                    model[row][column]= new ModelData("4");
                     column++;
                     break;
             }
@@ -314,7 +314,7 @@ public class LasersModel {
 
             //print each line [row fixed, col++]
             for (int col = 0; col < this.totalRow; ++col) {
-                str.append(this.model[row][col]).append(" ");
+                str.append(this.model[row][col].getContent()).append(" ");
             }
             str.append("\n");
         }
